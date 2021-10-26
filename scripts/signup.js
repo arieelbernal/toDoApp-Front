@@ -6,7 +6,6 @@ window.addEventListener('load', function(){
     const inputPass= document.querySelector('input#pass');
     const inputVerificacion= document.querySelector('input#verificacion');
     const btnSubmit= document.querySelector('#btnSubmit');
-    let tokensUsuario=[];
     let usuario= new Object();
     let apiUrl= "https://ctd-todo-api.herokuapp.com/v1"
     inputNombre.addEventListener('change', ()=>{
@@ -66,9 +65,10 @@ window.addEventListener('load', function(){
         }
         fetch(`${apiUrl}/users`, settings)
         .then(respuesta =>respuesta.json())
-        .then(rta =>{
-            tokensUsuario.push(rta.jwt);
-            console.log(rta.jwt);
+        .then(token =>{
+            if(token){
+                location.href= "/index.html";
+            }
         });
     })
     
