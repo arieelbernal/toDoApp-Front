@@ -27,6 +27,7 @@ window.addEventListener('load', function(){
         .then(respuesta =>respuesta.json())
         .then(token =>{
             if(token){
+                localStorage.setItem("token", token.jwt);
                 location.href= "/mis-tareas.html";
             }
         });
