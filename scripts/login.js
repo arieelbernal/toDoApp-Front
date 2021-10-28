@@ -3,7 +3,7 @@ window.addEventListener('load', function(){
     /*                              logica del login                              */
     /* -------------------------------------------------------------------------- */
 
-    const formulario =  this.document.forms[0];
+    const form =  this.document.forms[0];
     const inputEmail =  this.document.querySelector('#inputEmail');
     const inputPassword = this.document.querySelector('#inputPassword');
     const apiUrl = "https://ctd-todo-api.herokuapp.com/v1";
