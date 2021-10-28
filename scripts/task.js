@@ -18,11 +18,7 @@ window.addEventListener("load", function(){
         obtencionTareas(apiUrl,settings);
     })
     }
-    
-    btnCerrarSesion.addEventListener("click", function(e){
-        localStorage.clear();
-        location.href="/index.html";
-    })
+    btnCerrarSesion.addEventListener("click", cerrarSesion);
     
 })
 
@@ -77,4 +73,10 @@ function renderTasks(array){
         </div>
         </li>`
     });
+}
+
+function cerrarSesion(evento){
+    evento.preventDefault();
+    localStorage.clear();
+    location.href= "/index.html";
 }
