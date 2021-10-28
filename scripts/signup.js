@@ -63,16 +63,21 @@ window.addEventListener('load', function(){
             },
             "body": JSON.stringify(usuario)
         }
-        fetch(`${apiUrl}/users`, settings)
+        registroApi(apiUrl,settings);
+        form.reset();
+    })
+    
+});
+
+function registroApi(url,settings){
+    fetch(`${url}/users`, settings)
         .then(respuesta =>respuesta.json())
         .then(token =>{
             if(token){
                 location.href= "/index.html";
             }
         });
-    })
-    
-});
+}
 
 function validTexto(texto){
     let verificacion=true;
